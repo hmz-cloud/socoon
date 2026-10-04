@@ -1,7 +1,962 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth">
 <head>
+  <meta charset="UTF-8"><!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socoon | Acoustical Solutions & Soundproofing | سكون لمعالجة الضوضاء</title>
+  <meta name="description" content="Socoon EST for Acoustical Solutions - Authorized Agent for Acoustic Group in Saudi Arabia. Soundproofing, Vibration Reduction, and Architectural Acoustics in Khobar, KSA.">
+  
+  <!-- Google Fonts: Inter (Latin) and Cairo (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              500: '#0d9488',
+              600: '#0f766e',
+              700: '#115e59',
+              800: '#134e4a',
+              900: '#042f2e'
+            },
+            acoustic: {
+              dark: '#0f172a',
+              surface: '#1e293b',
+              amber: '#d97706',
+              gold: '#f59e0b'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            arabic: ['Cairo', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Soundwave pulsation */
+    @keyframes soundWave {
+      0%, 100% { height: 8px; }
+      50% { height: 32px; }
+    }
+    .wave-bar {
+      animation: soundWave 1.2s ease-in-out infinite;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+    .wave-bar:nth-child(5) { animation-delay: 0.6s; }
+    .wave-bar:nth-child(6) { animation-delay: 0.75s; }
+
+    /* RTL typography tweaks */
+    [dir="rtl"] {
+      font-family: 'Cairo', sans-serif;
+    }
+    [dir="ltr"] {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    /* Smooth glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.85);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Identity -->
+        <a href="#home" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-700 to-teal-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-headphones-simple text-xl"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-black tracking-tight text-slate-900 group-hover:text-brand-600 transition-colors">
+              SOCOON <span class="text-xs px-2 py-0.5 ml-1 font-semibold rounded-full bg-brand-50 text-brand-700 border border-brand-200">KSA</span>
+            </span>
+            <span class="text-xs text-slate-500 font-medium" data-i18n="nav.tagline">سكون للديكور ومعالجة الضوضاء</span>
+          </div>
+        </a>
+
+        <!-- Acoustic Group Partner Badge in Header -->
+        <div class="hidden xl:flex items-center gap-3 pl-6 border-l border-slate-200">
+          <svg class="w-8 h-8 text-brand-600 flex-shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="5" stroke-dasharray="6 3"/>
+            <path d="M30 68L50 24L70 68" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M38 52H62" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="14" stroke="#0f172a" stroke-width="4"/>
+          </svg>
+          <div class="leading-tight">
+            <div class="text-[11px] font-black tracking-wider text-slate-900 uppercase">ACOUSTIC GROUP</div>
+            <div class="text-[9px] text-brand-700 font-bold uppercase tracking-tight">Authorized KSA Agent</div>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+          <a href="#about" class="hover:text-brand-600 transition-colors" data-i18n="nav.about">About</a>
+          <a href="#systems" class="hover:text-brand-600 transition-colors" data-i18n="nav.systems">Acoustic Systems</a>
+          <a href="#experience" class="hover:text-brand-600 transition-colors" data-i18n="nav.experience">Experience Demo</a>
+          <a href="#projects" class="hover:text-brand-600 transition-colors" data-i18n="nav.projects">Projects</a>
+          <a href="#partners" class="hover:text-brand-600 transition-colors" data-i18n="nav.partners">Global Network</a>
+          <a href="#contact" class="hover:text-brand-600 transition-colors" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <!-- Right Side: Language Switcher & Consultation CTA -->
+        <div class="flex items-center gap-3">
+          <!-- Bilingual Switcher Button -->
+          <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 flex items-center gap-1.5 transition">
+            <i class="fa-solid fa-globe text-brand-600"></i>
+            <span id="langLabel">العربية</span>
+          </button>
+
+          <!-- Direct Call/Quote Action -->
+          <a href="#consultation" class="hidden sm:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold px-4 py-2.5 rounded-lg shadow-sm shadow-brand-600/30 transition-all hover:shadow-md">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span data-i18n="nav.cta">Consult Engineer</span>
+          </a>
+
+          <!-- Mobile Menu Hamburger -->
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Nav -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 text-base font-medium">
+      <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md hover:bg-slate-100 text-slate-700" data-i18n="nav.about">About</a>
+      <a href="#systems" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md hover:bg-slate-100 text-slate-700" data-i18n="nav.systems">Acoustic Systems</a>
+      <a href="#experience" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md hover:bg-slate-100 text-slate-700" data-i18n="nav.experience">Experience Demo</a>
+      <a href="#projects" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md hover:bg-slate-100 text-slate-700" data-i18n="nav.projects">Projects</a>
+      <a href="#partners" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md hover:bg-slate-100 text-slate-700" data-i18n="nav.partners">Global Network</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md hover:bg-slate-100 text-slate-700" data-i18n="nav.contact">Contact</a>
+      <a href="tel:+966541525555" class="block w-full text-center bg-brand-600 text-white font-semibold py-2.5 rounded-lg mt-2">
+        <i class="fa-solid fa-phone mr-2"></i> +966 541 525 555
+      </a>
+    </div>
+  </header>
+
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white pt-20 pb-28">
+    <!-- Subtle soundwave background glow -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 -left-20 w-80 h-80 bg-teal-400 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Authorized Agent High-Impact Trust Banner with Official Acoustic Group Logo -->
+      <div class="mb-8 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-slate-950 via-slate-900 to-brand-950 border-2 border-brand-500/50 shadow-2xl shadow-brand-950/60 backdrop-blur-md">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          
+          <!-- Official Acoustic Group Logo Lockup -->
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-900 to-black border border-brand-400/40 p-2.5 flex items-center justify-center flex-shrink-0 shadow-lg shadow-teal-500/20">
+              <svg class="w-full h-full text-brand-400" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Concentric Soundwave Isolation Rings -->
+                <circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="3" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+                <circle cx="60" cy="60" r="46" stroke="currentColor" stroke-width="4" stroke-opacity="0.6"/>
+                <circle cx="60" cy="60" r="38" stroke="currentColor" stroke-width="3" stroke-opacity="0.9"/>
+                <!-- Stylized AG Monogram -->
+                <path d="M38 78L60 28L82 78" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M46 62H74" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+                <path d="M78 60C78 72 68 80 56 80C44 80 36 70 36 58C36 46 46 38 58 38C66 38 72 42 75 48" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-[10px] uppercase font-black tracking-widest text-brand-300 bg-brand-900/90 px-2.5 py-0.5 rounded border border-brand-500/40">
+                  OFFICIAL PARTNERSHIP
+                </span>
+                <span class="text-[10px] text-emerald-400 font-mono tracking-wider font-semibold">
+                  <i class="fa-solid fa-check-double mr-1"></i> VERIFIED BY ENGINEERS • PROVEN BY TIME
+                </span>
+              </div>
+              <h2 class="text-lg sm:text-xl font-extrabold text-white mt-1" data-i18n="hero.partnerPill">
+                Authorized Agent for Acoustic Group in Saudi Arabia
+              </h2>
+              <p class="text-xs text-slate-400 mt-0.5">
+                Represented in KSA by <strong class="text-white">Socoon Establishment</strong> | Al Khobar
+              </p>
+            </div>
+          </div>
+
+          <!-- Official Technical Standards Badge -->
+          <div class="flex items-center gap-5 text-xs border-t lg:border-t-0 lg:border-l border-slate-700/80 lg:pl-6 pt-3 lg:pt-0 w-full lg:w-auto justify-between lg:justify-start">
+            <div>
+              <span class="block text-[11px] font-black uppercase text-brand-300 tracking-wider">ACOUSTIC GROUP</span>
+              <span class="text-[11px] text-slate-400">EU Certified Chamber & RnD</span>
+            </div>
+            <div class="px-3 py-1.5 rounded-lg bg-brand-500/10 border border-brand-400/30 text-teal-300 font-semibold text-[11px] whitespace-nowrap">
+              <i class="fa-solid fa-award mr-1.5 text-brand-400"></i> ISO Acoustic Tested
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text Hero Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            <span data-i18n="hero.titlePrefix">Delivering Clever</span><br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-brand-300 to-emerald-400" data-i18n="hero.titleAccent">Acoustical Solutions</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 font-light leading-relaxed max-w-2xl" data-i18n="hero.subtitle">
+            We eliminate noise and optimize indoor acoustics so you can live in silence, work with comfort, relax peacefully, and perform at your highest potential.
+          </p>
+
+          <!-- 4 Core Promises Quick Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-center">
+              <i class="fa-solid fa-bed text-brand-400 text-lg mb-1"></i>
+              <div class="text-xs font-semibold" data-i18n="hero.pill1">Live in Silence</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-center">
+              <i class="fa-solid fa-briefcase text-teal-300 text-lg mb-1"></i>
+              <div class="text-xs font-semibold" data-i18n="hero.pill2">Work Comfort</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-center">
+              <i class="fa-solid fa-couch text-amber-400 text-lg mb-1"></i>
+              <div class="text-xs font-semibold" data-i18n="hero.pill3">Cozy Relaxation</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-center">
+              <i class="fa-solid fa-music text-purple-300 text-lg mb-1"></i>
+              <div class="text-xs font-semibold" data-i18n="hero.pill4">Acoustic Clarity</div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="pt-4 flex flex-wrap gap-4 items-center">
+            <a href="#systems" class="px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+              <span data-i18n="hero.exploreBtn">Explore Certified Systems</span>
+              <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+            </a>
+            <a href="https://wa.me/966541525555" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm flex items-center gap-2 transition-all">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span data-i18n="hero.whatsappBtn">WhatsApp Consultation</span>
+            </a>
+          </div>
+
+          <!-- Proof Metrics -->
+          <div class="pt-6 border-t border-slate-700/70 grid grid-cols-3 gap-4 text-slate-300 text-xs sm:text-sm">
+            <div>
+              <span class="block text-2xl font-bold text-white">Up to 68 dB</span>
+              <span class="text-slate-400" data-i18n="hero.stat1">Isolation Rating</span>
+            </div>
+            <div>
+              <span class="block text-2xl font-bold text-white">40+</span>
+              <span class="text-slate-400" data-i18n="hero.stat2">Schools & Halls in KSA</span>
+            </div>
+            <div>
+              <span class="block text-2xl font-bold text-white">100%</span>
+              <span class="text-slate-400" data-i18n="hero.stat3">Engineered & Tested</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Animated Soundwave Box -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 p-7 border border-slate-700 shadow-2xl overflow-hidden">
+            
+            <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-6">
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-xs uppercase font-mono tracking-wider text-slate-300" data-i18n="hero.meterTitle">Acoustic Shield Status: ACTIVE</span>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded bg-brand-900/60 border border-brand-500/40 text-brand-300 font-mono">STC 68 dB</span>
+            </div>
+
+            <!-- Graphic Waveform Visualizer -->
+            <div class="h-28 flex items-center justify-center gap-2 bg-slate-950/60 rounded-xl p-4 border border-slate-800 my-4">
+              <div class="w-1.5 bg-brand-400 rounded-full wave-bar h-4"></div>
+              <div class="w-1.5 bg-brand-400 rounded-full wave-bar h-8"></div>
+              <div class="w-1.5 bg-teal-400 rounded-full wave-bar h-16"></div>
+              <div class="w-1.5 bg-brand-300 rounded-full wave-bar h-12"></div>
+              <div class="w-1.5 bg-emerald-400 rounded-full wave-bar h-20"></div>
+              <div class="w-1.5 bg-brand-500 rounded-full wave-bar h-10"></div>
+              <div class="w-1.5 bg-teal-300 rounded-full wave-bar h-6"></div>
+              <div class="w-1.5 bg-brand-400 rounded-full wave-bar h-14"></div>
+              <div class="w-1.5 bg-emerald-500 rounded-full wave-bar h-18"></div>
+              <div class="w-1.5 bg-teal-400 rounded-full wave-bar h-8"></div>
+              <div class="w-1.5 bg-brand-400 rounded-full wave-bar h-4"></div>
+            </div>
+
+            <div class="space-y-3 text-xs text-slate-300 mt-5">
+              <div class="flex justify-between py-1 border-b border-slate-800">
+                <span class="text-slate-400" data-i18n="hero.spec1Label">Headquarters:</span>
+                <span class="font-semibold text-white">Al Khobar, Eastern Province, KSA</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-800">
+                <span class="text-slate-400" data-i18n="hero.spec2Label">Engineering Partner:</span>
+                <span class="font-semibold text-white">Acoustic Group (EU / International)</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-800">
+                <span class="text-slate-400" data-i18n="hero.spec3Label">Applications:</span>
+                <span class="font-semibold text-white">Studios, Offices, Villas, Gyms, Highways</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-slate-400" data-i18n="hero.spec4Label">Technology:</span>
+                <span class="font-semibold text-brand-400">Patented Vibro-Joint & Floating Screed</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400" data-i18n="hero.verified">Verified by Acoustic Engineers</span>
+              <span class="text-brand-300 font-medium"><i class="fa-solid fa-shield-halved mr-1"></i> ISO Tested</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full border border-brand-200" data-i18n="about.badge">About Socoon Est.</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-i18n="about.heading">Specialized Soundproofing in Al Khobar, Saudi Arabia</h2>
+        <p class="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed" data-i18n="about.desc">
+          Socoon is one of the leading soundproof specialist establishments based in Khobar, collaborating with elite international manufacturers. We merge scientific acoustic engineering with elegant interior finishes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1: Acoustic Engineers -->
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:border-brand-300 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-compass-drafting"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="about.pillar1Title">Acoustic Engineers</h3>
+          <p class="text-slate-600 text-sm leading-relaxed" data-i18n="about.pillar1Desc">
+            Our team includes specialized building acoustic engineers skilled in RT60 reverberation analysis, vibration isolation, and computer acoustic modeling for civil and commercial projects.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Designers & Architects -->
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:border-brand-300 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="about.pillar2Title">Designers & Architects</h3>
+          <p class="text-slate-600 text-sm leading-relaxed" data-i18n="about.pillar2Desc">
+            We collaborate seamlessly with interior designers and architects to integrate high-performance sound absorption panels that elevate interior aesthetics rather than compromise them.
+          </p>
+        </div>
+
+        <!-- Pillar 3: Customized RnD Solutions -->
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:border-brand-300 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-flask-vial"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="about.pillar3Title">Customized R&D Solutions</h3>
+          <p class="text-slate-600 text-sm leading-relaxed" data-i18n="about.pillar3Desc">
+            Backed by sound-measuring chambers and dedicated RnD labs, we formulate tailored systems to solve specific noise concerns in demanding studios, schools, and industrial spaces.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience" class="py-20 bg-slate-900 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs uppercase tracking-widest font-bold text-brand-400 bg-brand-950/80 px-3 py-1 rounded-full border border-brand-800" data-i18n="sim.badge">Interactive Acoustic Simulation</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-i18n="sim.heading">Feel the Power of Soundproofing</h2>
+        <p class="mt-4 text-slate-300 text-base" data-i18n="sim.desc">
+          Compare ambient noise levels before and after installing Socoon's high-efficiency certified isolation systems.
+        </p>
+      </div>
+
+      <!-- Simulator Card -->
+      <div class="max-w-4xl mx-auto rounded-3xl bg-slate-800/90 border border-slate-700 p-6 sm:p-10 shadow-2xl">
+        
+        <!-- Environment Selector -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+          <button onclick="setSimulationEnv('office')" id="env-office" class="env-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-brand-600 text-white shadow-md">
+            <i class="fa-solid fa-building mr-1"></i> <span data-i18n="sim.env1">Corporate Office</span>
+          </button>
+          <button onclick="setSimulationEnv('residential')" id="env-residential" class="env-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-700 text-slate-300 hover:bg-slate-600">
+            <i class="fa-solid fa-house mr-1"></i> <span data-i18n="sim.env2">Luxury Villa / Home</span>
+          </button>
+          <button onclick="setSimulationEnv('studio')" id="env-studio" class="env-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-700 text-slate-300 hover:bg-slate-600">
+            <i class="fa-solid fa-microphone-lines mr-1"></i> <span data-i18n="sim.env3">Recording Studio</span>
+          </button>
+          <button onclick="setSimulationEnv('highway')" id="env-highway" class="env-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-700 text-slate-300 hover:bg-slate-600">
+            <i class="fa-solid fa-road mr-1"></i> <span data-i18n="sim.env4">Highway / Traffic</span>
+          </button>
+        </div>
+
+        <!-- Before / After Toggle Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          
+          <!-- Mode Controls -->
+          <div class="space-y-6">
+            <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 border border-slate-700">
+              <div>
+                <div class="text-sm font-bold text-white" data-i18n="sim.toggleTitle">Soundproofing Status</div>
+                <div class="text-xs text-slate-400" id="simStatusSubtitle">Currently without acoustical treatment</div>
+              </div>
+              <button id="treatmentToggle" onclick="toggleTreatment()" class="relative inline-flex h-8 w-16 items-center rounded-full bg-slate-600 transition-colors focus:outline-none">
+                <span id="treatmentKnob" class="inline-block h-6 w-6 transform rounded-full bg-white transition-transform translate-x-1"></span>
+              </button>
+            </div>
+
+            <!-- Description Card -->
+            <div class="p-5 rounded-2xl bg-slate-900/50 border border-slate-700/60">
+              <h4 class="text-sm font-bold text-brand-300 mb-2" id="simEnvTitle">Office Environment</h4>
+              <p class="text-xs text-slate-300 leading-relaxed" id="simEnvDesc">
+                HVAC hum, corridor chatter, phone calls leaking through drywall, causing reduced focus and fatigue.
+              </p>
+              <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-400" data-i18n="sim.recommendedSystem">Recommended System:</span>
+                <span class="font-bold text-teal-400" id="simRecommendedSystem">Soundline-dB + Decoustic</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Decibel Meter Display -->
+          <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col items-center justify-center text-center">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-1" data-i18n="sim.noiseLevel">Calculated Noise Level</span>
+            
+            <div class="text-6xl sm:text-7xl font-black transition-all duration-500 my-2" id="dbDisplay">
+              <span id="dbValue" class="text-rose-400">72</span>
+              <span class="text-2xl font-light text-slate-400">dB</span>
+            </div>
+
+            <!-- Dynamic Gauge Bar -->
+            <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden my-3">
+              <div id="dbProgressBar" class="h-full bg-rose-500 transition-all duration-500 rounded-full" style="width: 72%;"></div>
+            </div>
+
+            <div class="flex justify-between w-full text-[10px] text-slate-500 font-mono">
+              <span>20 dB (Whisper)</span>
+              <span>50 dB (Peaceful)</span>
+              <span>85 dB (Hazardous)</span>
+            </div>
+
+            <div class="mt-4 px-3 py-1.5 rounded-lg text-xs font-semibold" id="comfortBadge">
+              <span class="text-rose-400"><i class="fa-solid fa-triangle-exclamation mr-1"></i> High Noise Intrusion</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="systems" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full border border-brand-200" data-i18n="systems.badge">Certified Systems</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-i18n="systems.heading">Our Specialized Product Systems</h2>
+        <p class="mt-4 text-slate-600 text-base" data-i18n="systems.desc">
+          High-performance European engineered soundproofing and acoustic design solutions, tested in acoustic chambers and proven across prestigious commercial, educational, and residential landmarks.
+        </p>
+      </div>
+
+      <!-- Systems Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Existing Product: ZIPS-4 Frameless Sound Insulation -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-brand-500/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              ΔRw = 16-19 dB
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-300 mb-3 text-lg">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ZIPS™ System</h3>
+            <p class="text-xs text-slate-300 mt-1">Frameless Soundproofing Panels (ZIPS-4)</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed" data-i18n="products.zipsDesc">
+              Patented vibro-joint technology for direct frameless wall and ceiling soundproofing. Leveling function for single-layer civil structures: brick, concrete, gypsum, and RC slabs.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> <span data-i18n="products.zipsF1">Patented vibro-isolated fixings</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> <span data-i18n="products.zipsF2">Surface leveling with gypsum finish</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> <span data-i18n="products.zipsF3">Rapid installation without metallic framework</span></li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: Walls & Ceilings</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW PDF CATALOG PRODUCTS -->
+
+        <!-- 1. ECOwall Groovy -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-emerald-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              ECOcero Series
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-300 mb-3 text-lg">
+              <i class="fa-solid fa-border-all"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOwall Groovy</h3>
+            <p class="text-xs text-slate-300 mt-1">Designed by Alejandra Pombo</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Inspired by 70s postmodernist style, featuring colorful die-cut decorative panels crafted from recycled acoustic PET fibers for vibrant vertical absorption.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> High-performance PET fiber panels</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Multiple geometric die-cut models</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Eco-friendly recycled material</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOwall</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. ECOwall Strata -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-emerald-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              ECOcero Series
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-300 mb-3 text-lg">
+              <i class="fa-solid fa-mountain"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOwall Strata</h3>
+            <p class="text-xs text-slate-300 mt-1">Topographic Map Abstraction</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Abstract acoustic paneling inspired by natural topographic contours, blending organic design aesthetics with superior wall acoustic absorption.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Layered topographic aesthetics</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Wall surface acoustic treatment</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Sustainable recycled fiber</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOwall</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. ECOwall V-cut -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-emerald-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              ECOcero Series
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-300 mb-3 text-lg">
+              <i class="fa-solid fa-lines-leaning"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOwall V-cut</h3>
+            <p class="text-xs text-slate-300 mt-1">Precision Beveled Panels</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Precision V-cut beveling that adds refined architectural depth, enabling flexible, linear, and geometric wall configurations.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Custom linear V-groove patterns</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Modular wall installation</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> High sound absorption coefficient</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOwall</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. ECOwall Volume -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-emerald-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              ECOcero Series
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-300 mb-3 text-lg">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOwall Volume</h3>
+            <p class="text-xs text-slate-300 mt-1">3D Double-Layer Acoustics</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              3D volumetric wall panels built with double-layer polyester fiber structures, creating architectural depth while dampening ambient sound.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Volumetric double-layer construction</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Enhanced low-to-mid frequency absorption</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> 100% Recycled PET fiber composition</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOwall</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. ECOwall Emotion -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-emerald-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              ECOcero Series
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-300 mb-3 text-lg">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOwall Emotion</h3>
+            <p class="text-xs text-slate-300 mt-1">Bold Contemporary Artistry</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Expressive acoustic panels designed to revitalize spaces with bold, contemporary patterns, custom shapes, and acoustic performance.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Bold geometric & organic shapes</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Acoustic print & color combinations</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Fire-retardant certified materials</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOwall</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. ECOnordik Meet -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-amber-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Wood & Acoustic
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-amber-400 mb-3 text-lg">
+              <i class="fa-solid fa-tree"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOnordik Meet</h3>
+            <p class="text-xs text-slate-300 mt-1">Designed by Erico Navazo</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Combines warm natural wood aesthetics with high-performance acoustic backings for refined boardrooms and hospitality settings.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Natural wood veneer finishes</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> High acoustic absorption backing</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Elegant slatted architectural look</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOnordik</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. ECOnordik Curve & Colour -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-amber-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Wood & Acoustic
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-amber-400 mb-3 text-lg">
+              <i class="fa-solid fa-wave-square"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOnordik Curve</h3>
+            <p class="text-xs text-slate-300 mt-1">Curved & Custom Color Wood Slats</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Flexible curved slatted wood panels with custom color tinting options, ideal for smooth, flowing acoustic wall features.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Flexible structure for curved walls</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Custom color wood finishes</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Fireproof options available</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOnordik</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. ECOceiling Flap -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-teal-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Ceilings
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-300 mb-3 text-lg">
+              <i class="fa-solid fa-rotate"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOceiling Flap</h3>
+            <p class="text-xs text-slate-300 mt-1">360° Rotating Ceiling Slats</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Innovative ceiling system featuring acoustic slats that rotate 360°, giving total control over space dynamics and sound distribution.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> 360-degree adjustable rotation</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Suspended ceiling mounting</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> High sound absorption performance</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOceiling</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. ECOceiling Code & Circular -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-teal-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Ceilings
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-300 mb-3 text-lg">
+              <i class="fa-solid fa-circle-dot"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOceiling Code & Circular</h3>
+            <p class="text-xs text-slate-300 mt-1">Designed by Rafa Ortega</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Volumetric suspended circular and patterned ceiling systems that create dynamic aesthetic flow while reducing ambient echo.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Integrated lighting compatibility</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Suspended volumetric dynamism</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> 100% Recycled PET construction</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOceiling</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. ECOceiling Baffle & Cloud -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-teal-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Ceilings
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-300 mb-3 text-lg">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOceiling Baffle & Cloud</h3>
+            <p class="text-xs text-slate-300 mt-1">Vertical & Horizontal Hanging Elements</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Vertical baffles and floating cloud islands engineered to intercept overhead sound waves in open-plan offices and high-ceiling halls.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Excellent for high reverberation spaces</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Adjustable suspension height</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Variety of geometric cutouts</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOceiling</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. ECOllections Lumomesh & Puzzle -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-purple-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Designer Collections
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-purple-300 mb-3 text-lg">
+              <i class="fa-solid fa-puzzle-piece"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">Lumomesh & Puzzle</h3>
+            <p class="text-xs text-slate-300 mt-1">By The Room Studio & Masquespacio</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Exclusive designer collections blending light, mesh, and artistic geometric puzzle arrangements for high-end interior architecture.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> High-end designer collaborations</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Integrated lighting & mesh textures</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Artistic wall absorption panels</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOllections</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. OTOgreen Wall & Planter -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-emerald-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Biophilic Acoustics
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-emerald-400 mb-3 text-lg">
+              <i class="fa-solid fa-plant-wilt"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">OTOgreen System</h3>
+            <p class="text-xs text-slate-300 mt-1">Designed by Rafa Ortega</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Biophilic acoustic wall modules and planters that merge natural vegetation with acoustic PET fibers to create healthy office environments.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Integrated planter compartments</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Biophilic noise reduction design</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Space dividers and wall systems</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOllections</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. ECObooth Sweet Home -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-blue-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Privacy Pods
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-blue-300 mb-3 text-lg">
+              <i class="fa-solid fa-person-shelter"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECObooth Sweet Home</h3>
+            <p class="text-xs text-slate-300 mt-1">Acoustic Privacy Booths</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Modular acoustic booth designed to create silent sanctuaries within open-plan offices for confidential phone calls and focused work.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> High speech privacy isolation</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Integrated power & ventilation</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Soft acoustic interior linings</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECObooth</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14. ECObasics (Square, Circle, Rectangle) -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-slate-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Standard Panels
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-slate-300 mb-3 text-lg">
+              <i class="fa-solid fa-shapes"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECObasics</h3>
+            <p class="text-xs text-slate-300 mt-1">Square, Circle & Rectangular Panels</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Minimalist geometric acoustic panels for walls and ceilings providing high-performance sound absorption with clean, versatile designs.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Clean geometric silhouettes</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Easy wall & ceiling mounting</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Broad spectrum of color options</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECObasics</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15. ECOdesign Art Series -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="p-6 bg-gradient-to-tr from-slate-900 to-slate-800 text-white relative">
+            <span class="absolute top-4 right-4 bg-purple-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              Acoustic Art
+            </span>
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-purple-300 mb-3 text-lg">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight">ECOdesign Art</h3>
+            <p class="text-xs text-slate-300 mt-1">Optical Illusion, Quibble, Mirage & Waves</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Artistic acoustic murals and sculptures designed by leading European artists, turning acoustic treatment into captivating centerpieces.
+            </p>
+            <ul class="text-xs space-y-2 text-slate-700 mb-6 font-medium">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Museum-grade artistic finishes</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Custom art prints and shapes</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> High acoustic absorption value</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Category: ECOdesign</span>
+              <a href="#contact" class="text-brand-600 font-bold hover:underline">Inquire System →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Socoon | Acoustical Solutions & Soundproofing | سكون لمعالجة الضوضاء</title>
   <meta name="description" content="Socoon EST for Acoustical Solutions - Authorized Agent for Acoustic Group in Saudi Arabia. Soundproofing, Vibration Reduction, and Architectural Acoustics in Khobar, KSA.">
