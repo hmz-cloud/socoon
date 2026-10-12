@@ -6,8 +6,14 @@
   <title>Socoon — Projects Gallery</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .thumb{cursor:pointer;transition:transform .2s}
-    .thumb:hover{transform:scale(1.03)}
+    .card { border-radius: 0.75rem; overflow: hidden; background: #fff; box-shadow: 0 6px 18px rgba(16,24,40,0.06); }
+    .card-header { height: 160px; background-size: cover; background-position: center; position: relative; }
+    .card-header::before{ content:''; position:absolute; inset:0; background: linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.72)); }
+    .card-header .meta { position: absolute; top: 1rem; right: 1rem; z-index:2; }
+    .card-header .icon { position:absolute; top:1rem; left:1rem; z-index:2; width:44px; height:44px; display:flex;align-items:center;justify-content:center;border-radius:0.5rem;background:rgba(255,255,255,0.06);backdrop-filter:blur(6px); }
+    .card-body { padding: 1.25rem; }
+    .thumb{cursor:pointer;transition:transform .18s}
+    .thumb:hover{transform:scale(1.02)}
     .lb{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:60;padding:1rem}
     .lb img{max-width:calc(100% - 4rem);max-height:calc(100% - 4rem);}
     .lb-close{position:absolute;top:1rem;right:1rem;color:#fff;font-size:1.5rem;cursor:pointer}
@@ -21,49 +27,63 @@
   </header>
 
   <main class="max-w-6xl mx-auto p-4">
-    <h1 class="text-2xl font-extrabold mb-3">Projects Gallery</h1>
-    <p class="text-slate-600 mb-6">All products and solutions. Click thumbnails to enlarge.</p>
+    <h1 class="text-2xl font-extrabold mb-3">Projects & Systems Gallery</h1>
+    <p class="text-slate-600 mb-6">Click a card header to view the full image. (Homepage unchanged.)</p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <figure>
-        <img src="/ZIPS%E2%84%A2%20System.jpeg" alt="ZIPS System" class="thumb w-full h-48 object-cover rounded-lg" data-full="/ZIPS%E2%84%A2%20System.jpeg">
-        <figcaption class="mt-2 text-sm font-semibold">ZIPS™ System</figcaption>
-      </figure>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <figure>
-        <img src="/SOUNDLINE%20DB%E2%84%A2.jpeg" alt="SOUNDLINE DB" class="thumb w-full h-48 object-cover rounded-lg" data-full="/SOUNDLINE%20DB%E2%84%A2.jpeg">
-        <figcaption class="mt-2 text-sm font-semibold">SOUNDLINE DB™</figcaption>
-      </figure>
+      <!-- ZIPS -->
+      <article class="card">
+        <button class="card-header" style="background-image:url('/ZIPS%E2%84%A2%20System.jpeg')" data-full="/ZIPS%E2%84%A2%20System.jpeg" aria-label="Open ZIPS image">
+          <div class="icon"><i class="fa-solid fa-layer-group text-white"></i></div>
+          <div class="meta"><span class="inline-block bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">ΔRw = 16-19 dB</span></div>
+          <div style="position:absolute;bottom:1rem;left:1rem;z-index:2;color:white;"><h3 class="text-2xl font-bold">ZIPS™ System</h3><p class="text-xs mt-1 opacity-90">Frameless Soundproofing Panels (ZIPS-4)</p></div>
+        </button>
+        <div class="card-body">
+          <p class="text-sm text-slate-600">Patented vibro-joint technology for direct frameless wall and ceiling soundproofing. Leveling function for single-layer civil structures: brick, concrete, gypsum, and RC slabs.</p>
+        </div>
+      </article>
 
-      <figure>
-        <img src="/ShumoPlast.jpeg" alt="ShumoPlast" class="thumb w-full h-48 object-cover rounded-lg" data-full="/ShumoPlast.jpeg">
-        <figcaption class="mt-2 text-sm font-semibold">SHUMOPLAST™</figcaption>
-      </figure>
+      <!-- SOUNDLINE -->
+      <article class="card">
+        <button class="card-header" style="background-image:url('/SOUNDLINE%20DB%E2%84%A2.jpeg')" data-full="/SOUNDLINE%20DB%E2%84%A2.jpeg" aria-label="Open SOUNDLINE image">
+          <div class="icon"><i class="fa-solid fa-shield-halved text-white"></i></div>
+          <div class="meta"><span class="inline-block bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">Up to 68 dB</span></div>
+          <div style="position:absolute;bottom:1rem;left:1rem;z-index:2;color:white;"><h3 class="text-2xl font-bold">SOUNDLINE DB™</h3><p class="text-xs mt-1 opacity-90">Soundproofing GFB Triplex</p></div>
+        </button>
+        <div class="card-body">
+          <p class="text-sm text-slate-600">Three-layer engineered triplex composed of two moisture-resistant gypsum plasterboards laminated with a specialized viscoelastic vibroacoustic sealant layer.</p>
+        </div>
+      </article>
 
-      <figure>
-        <img src="/Acoustic%20Group%20logo.webp" alt="Acoustic Group" class="thumb w-full h-48 object-cover rounded-lg" data-full="/Acoustic%20Group%20logo.webp">
-        <figcaption class="mt-2 text-sm font-semibold">Acoustic Group</figcaption>
-      </figure>
-
-      <figure>
-        <img src="/Socoon%20logo%20Dark.svg" alt="Socoon Logo Dark" class="thumb w-full h-48 object-contain rounded-lg bg-white p-4" data-full="/Socoon%20logo%20Dark.svg">
-        <figcaption class="mt-2 text-sm font-semibold">Socoon — Brand</figcaption>
-      </figure>
+      <!-- SHUMOPLAST -->
+      <article class="card">
+        <button class="card-header" style="background-image:url('/ShumoPlast.jpeg')" data-full="/ShumoPlast.jpeg" aria-label="Open ShumoPlast image">
+          <div class="icon"><i class="fa-solid fa-cubes text-white"></i></div>
+          <div class="meta"><span class="inline-block bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">ΔRw = 7-9 dB</span></div>
+          <div style="position:absolute;bottom:1rem;left:1rem;z-index:2;color:white;"><h3 class="text-2xl font-bold">SHUMOPLAST™</h3><p class="text-xs mt-1 opacity-90">Innovative Floating Floors</p></div>
+        </button>
+        <div class="card-body">
+          <p class="text-sm text-slate-600">Sound-insulating leveling coating applied in floating floor constructions as an elastic layer beneath the screed, even across irregular monolithic or precast structural slabs.</p>
+        </div>
+      </article>
 
     </div>
   </main>
 
   <script>
-    document.querySelectorAll('.thumb').forEach(img=>{
-      img.addEventListener('click', ()=>{
-        const src=img.dataset.full;
-        const lb=document.createElement('div');lb.className='lb';
-        lb.innerHTML='<span class="lb-close">✕</span><img src="'+src+'" alt="">';
+    // lightbox when header clicked
+    document.querySelectorAll('.card-header').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const src = btn.dataset.full;
+        const lb = document.createElement('div'); lb.className='lb';
+        lb.innerHTML = '<span class="lb-close">✕</span><img src="'+src+'" alt="">';
         document.body.appendChild(lb);
         lb.querySelector('.lb-close').addEventListener('click', ()=>lb.remove());
         lb.addEventListener('click', e=>{ if(e.target===lb) lb.remove(); });
       });
     });
   </script>
+
 </body>
 </html>
